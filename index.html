@@ -4,82 +4,110 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Casa Salinas · Pescado y sal de la bahía</title>
+<meta name="description" content="Casa Salinas: restaurante de pescado de lonja y sal de marisma frente a la bahía de Cádiz.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐟</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f6f8f9;--ink:#12213a;--mut:#4d5b70;--sea:#1d3f72;--rose:#e58f8a;--card:#ffffff;--line:#d5dde5;--hero:#12213a;--heroink:#f6f8f9;
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1626;--ink:#e9eef4;--mut:#9fb0c4;--sea:#8fb2ec;--card:#15223a;--line:#27385a;--hero:#0a111d}}
-:root[data-theme="dark"]{--bg:#0d1626;--ink:#e9eef4;--mut:#9fb0c4;--sea:#8fb2ec;--card:#15223a;--line:#27385a;--hero:#0a111d}
-*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 1.125rem/1.65 'Newsreader',Georgia,serif}
+:root{--bg:#f6f8f9;--ink:#12213a;--mut:#4d5b70;--sea:#1d3f72;--rose:#e58f8a;--card:#fff;--line:#d5dde5;--hero:#12213a;--heroink:#f6f8f9;--btnink:#fff}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1626;--ink:#e9eef4;--mut:#9fb0c4;--sea:#8fb2ec;--card:#15223a;--line:#27385a;--hero:#0a111d;--btnink:#0d1626}}
+:root[data-theme="dark"]{--bg:#0d1626;--ink:#e9eef4;--mut:#9fb0c4;--sea:#8fb2ec;--card:#15223a;--line:#27385a;--hero:#0a111d;--btnink:#0d1626}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.125rem/1.65 'Newsreader',Georgia,serif;padding-bottom:env(safe-area-inset-bottom,0px)}
 h1,h2,h3,.nav,button,label{font-family:'Bricolage Grotesque',system-ui,sans-serif}
-a{color:inherit}:focus-visible{outline:3px solid var(--rose);outline-offset:3px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--rose);outline-offset:3px}
 .wrap{max-width:1000px;margin:0 auto;padding:0 1.25rem}
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--hero);color:var(--heroink)}
+header{position:sticky;top:0;z-index:5;background:var(--hero);color:var(--heroink);padding-top:env(safe-area-inset-top,0px)}
 .nav{display:flex;justify-content:space-between;align-items:center;padding:.8rem 1.25rem;max-width:1000px;margin:auto;font-weight:700}
-.nav nav{display:flex;gap:1.2rem;font-weight:400;font-size:.95rem}.nav a{text-decoration:none}.nav a:hover{color:var(--rose)}
+.nav nav{display:flex;gap:1.2rem;font-weight:400;font-size:.95rem}
+.nav a{text-decoration:none}.nav a:hover{color:var(--rose)}
 .hero{background:var(--hero);color:var(--heroink);padding:4rem 0 0;overflow:hidden}
 .hero h1{font-size:clamp(3.2rem,13vw,8.5rem);line-height:.88;margin:0;font-weight:800;letter-spacing:-.04em}
 .hero h1 span{display:block;color:var(--rose);margin-left:.5em}
 .hero p{max-width:34ch;font-size:1.3rem;margin:1.8rem 0 2rem;opacity:.9}
+.hero svg{display:block;width:100%;height:auto;margin-top:3rem}
 .btn{display:inline-block;background:var(--rose);color:#12213a;padding:.8rem 1.5rem;border-radius:2px;font-weight:700;text-decoration:none;border:0;font-size:1rem;cursor:pointer}
 .btn:hover{filter:brightness(1.08)}
-/* salinas: estanques en CSS */
-.pans{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-top:3.5rem;height:90px}
-.pans i{background:var(--rose);opacity:.85}.pans i:nth-child(2n){background:#f2c3be}.pans i:nth-child(3n){background:#fff;opacity:.9}.pans i:nth-child(5){background:var(--sea);opacity:1}
 section{padding:4.5rem 0}
+.alt{background:var(--card)}
 h2{font-size:clamp(2rem,5vw,3rem);line-height:1.05;margin:0 0 1.2rem;letter-spacing:-.02em}
-.two{display:grid;gap:2.5rem;grid-template-columns:1fr 1fr}
+.two{display:grid;gap:2.5rem;grid-template-columns:1fr 1fr;align-items:center}
 .two p{margin:0 0 1rem;max-width:60ch}
-.dato{border-left:4px solid var(--rose);padding-left:1.2rem;font-style:italic;color:var(--mut)}
+.art{width:100%;height:auto;border:1px solid var(--line);background:var(--card);border-radius:2px}
+.dato{border-left:4px solid var(--rose);padding-left:1.2rem;font-style:italic;color:var(--mut);margin-top:1.5rem!important}
 .tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem}
 .tabs button{background:none;border:1px solid var(--line);color:var(--ink);padding:.55rem 1.1rem;font-size:1rem;cursor:pointer;border-radius:2px}
-.tabs button[aria-selected="true"]{background:var(--sea);color:#fff;border-color:var(--sea)}
-:root[data-theme="dark"] .tabs button[aria-selected="true"]{color:#0d1626}
-.dish{display:grid;grid-template-columns:1fr auto;gap:.2rem 1rem;padding:1rem 0;border-bottom:1px solid var(--line)}
-.dish h3{margin:0;font-size:1.15rem}.dish b{font-family:'Bricolage Grotesque',sans-serif}.dish p{grid-column:1;margin:0;color:var(--mut);font-size:1rem}
+.tabs button[aria-selected="true"]{background:var(--sea);color:var(--btnink);border-color:var(--sea)}
+.dish{display:grid;grid-template-columns:64px 1fr auto;gap:.1rem 1rem;align-items:center;padding:1rem 0;border-bottom:1px solid var(--line)}
+.dish svg{grid-row:1/3;width:64px;height:64px}
+.dish h3{margin:0;font-size:1.15rem}
+.dish b{font-family:'Bricolage Grotesque',sans-serif}
+.dish p{grid-column:2/4;margin:0;color:var(--mut);font-size:1rem}
 .hours{background:var(--card);border:1px solid var(--line);padding:1.5rem;border-radius:2px}
-.hours dl{display:grid;grid-template-columns:auto 1fr;gap:.4rem 1.5rem;margin:0}.hours dt{font-weight:700}.hours dd{margin:0}
-form{display:grid;gap:1rem;background:var(--card);border:1px solid var(--line);padding:1.5rem;border-radius:2px}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}label{display:grid;gap:.3rem;font-size:.9rem;font-weight:700}
-input,select{font:inherit;font-weight:400;padding:.65rem;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:2px}
+.hours dl{display:grid;grid-template-columns:auto 1fr;gap:.4rem 1.5rem;margin:0}
+.hours dt{font-weight:700}.hours dd{margin:0}
+form{display:grid;gap:1rem;background:var(--bg);border:1px solid var(--line);padding:1.5rem;border-radius:2px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+label{display:grid;gap:.3rem;font-size:.9rem;font-weight:700}
+input,select{font:inherit;font-weight:400;padding:.65rem;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:2px}
 #ok{display:none;padding:1rem;border-left:4px solid var(--sea);background:var(--card)}
 footer{background:var(--hero);color:var(--heroink);padding:2rem 0;font-size:.95rem}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-@media(max-width:720px){.two,.row{grid-template-columns:1fr}.nav nav{gap:.8rem;font-size:.85rem}.pans{height:60px}}
+@media(max-width:720px){.two,.row{grid-template-columns:1fr}.nav nav{gap:.8rem;font-size:.85rem}.dish{grid-template-columns:48px 1fr auto}.dish svg{width:48px;height:48px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<header><div class="nav"><a href="#">Casa Salinas</a><nav><a href="#historia">Historia</a><a href="#carta">Carta</a><a href="#reservas">Reservas</a></nav></div></header>
+<header><div class="nav"><a href="#">Casa Salinas</a><nav aria-label="Principal"><a href="#historia">Historia</a><a href="#carta">Carta</a><a href="#reservas">Reservas</a></nav></div></header>
 
 <main>
 <div class="hero"><div class="wrap">
 <h1>Casa<span>Salinas</span></h1>
 <p>Pescado de la lonja, sal de nuestras marismas y fuego de encina. Frente a la bahía de Cádiz.</p>
 <a class="btn" href="#reservas">Reservar mesa</a>
-<div class="pans" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-</div></div>
+</div>
+<!-- Ilustración: salinas al atardecer -->
+<svg viewBox="0 0 1000 240" role="img" aria-label="Ilustración de las salinas de la bahía al atardecer" preserveAspectRatio="xMidYMax slice">
+<circle cx="760" cy="95" r="52" fill="#e58f8a"/>
+<rect x="0" y="118" width="1000" height="16" fill="#1d3f72"/>
+<path d="M0 118 L60 100 L120 118 Z M300 118 L350 104 L400 118 Z" fill="#2a4f8a"/>
+<g fill="#f2c3be"><rect x="20" y="140" width="210" height="18"/><rect x="250" y="140" width="230" height="18"/><rect x="500" y="140" width="240" height="18" fill="#fff"/><rect x="760" y="140" width="220" height="18"/></g>
+<g fill="#e58f8a"><rect x="0" y="166" width="150" height="26"/><rect x="170" y="166" width="300" height="26" fill="#1d3f72"/><rect x="490" y="166" width="220" height="26"/><rect x="730" y="166" width="270" height="26" fill="#f2c3be"/></g>
+<g fill="#f6f8f9"><rect x="0" y="200" width="330" height="40"/><rect x="350" y="200" width="260" height="40" fill="#e58f8a"/><rect x="630" y="200" width="370" height="40"/></g>
+<path d="M40 140 L90 96 L150 140 Z M120 140 L170 108 L230 140 Z" fill="#fff"/>
+<path d="M40 140 L90 96 L100 140 Z M120 140 L170 108 L178 140 Z" fill="#d5dde5"/>
+</svg>
+</div>
 
 <section id="historia"><div class="wrap two">
+<svg class="art" viewBox="0 0 400 300" role="img" aria-label="Ilustración de un atún rojo">
+<rect width="400" height="300" fill="#1d3f72"/>
+<g stroke="#8fb2ec" stroke-width="3" fill="none" opacity=".6"><path d="M0 60q25-15 50 0t50 0 50 0 50 0 50 0 50 0 50 0 50 0"/><path d="M0 250q25-15 50 0t50 0 50 0 50 0 50 0 50 0 50 0 50 0"/></g>
+<path d="M60 150C110 90 220 85 290 140L355 100 340 150 355 200 290 160C220 215 110 210 60 150Z" fill="#e9eef4"/>
+<path d="M60 150C110 90 220 85 290 140 220 120 120 125 60 150Z" fill="#12213a"/>
+<path d="M150 98L175 62 205 100Z M175 205L195 238 215 204Z" fill="#e58f8a"/>
+<path d="M200 118q15 32 0 64M235 124q12 26 0 52" stroke="#1d3f72" stroke-width="4" fill="none"/>
+<circle cx="105" cy="143" r="7" fill="#12213a"/><circle cx="103" cy="141" r="2" fill="#fff"/>
+</svg>
 <div><h2>Una casa de salineros</h2>
 <p>En 1952 Dolores Salinas abrió una barra para dar de comer a los salineros a la salida de la jornada: caldo de pescado, tomates aliñados y pan.</p>
-<p>Hoy su nieta, Marina, sigue cocinando lo mismo con más cuidado: atún de almadraba, pescado de roca y verduras del huerto de la Isla.</p></div>
-<p class="dato">«La sal no se echa, se pide perdón con ella. Poca, y en el momento justo.»<br>— Dolores Salinas, según la familia</p>
+<p>Hoy su nieta, Marina, sigue cocinando lo mismo con más cuidado: atún de almadraba, pescado de roca y verduras del huerto de la Isla.</p>
+<p class="dato">«La sal no se echa, se pide perdón con ella. Poca, y en el momento justo.»<br>— Dolores Salinas, según la familia</p></div>
 </div></section>
 
-<section id="carta" style="background:var(--card)"><div class="wrap">
+<section id="carta" class="alt"><div class="wrap">
 <h2>La carta</h2>
-<div class="tabs" role="tablist" id="tabs"></div>
+<div class="tabs" role="tablist" aria-label="Secciones de la carta" id="tabs"></div>
 <div id="lista" role="tabpanel"></div>
 <p style="color:var(--mut);font-size:1rem;margin-top:1.5rem">Precios con IVA incluido. Avísanos si tienes alergias o intolerancias.</p>
 </div></section>
 
 <section><div class="wrap two">
 <div><h2>Horario y dónde estamos</h2>
-<p>Camino de las Salinas, 14. Isla de León, Cádiz. Tel. 956 000 000 (número de ejemplo).</p></div>
+<p>Camino de las Salinas, 14. Isla de León, Cádiz.<br>Tel. 956 000 000 (número de ejemplo).</p></div>
 <div class="hours"><dl>
 <dt>Mar – jue</dt><dd>13:00 – 16:30 · 20:00 – 23:00</dd>
 <dt>Vie – sáb</dt><dd>13:00 – 17:00 · 20:00 – 00:00</dd>
@@ -87,7 +115,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
 <dt>Lunes</dt><dd>Cerrado</dd></dl></div>
 </div></section>
 
-<section id="reservas" style="background:var(--card)"><div class="wrap" style="max-width:640px">
+<section id="reservas" class="alt"><div class="wrap" style="max-width:640px">
 <h2>Reserva tu mesa</h2>
 <form id="f">
 <div class="row"><label>Nombre<input name="n" required autocomplete="name"></label>
@@ -102,22 +130,33 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
 <footer><div class="wrap"><span>Casa Salinas · Restaurante ficticio</span><span>Hecho con sal, no con prisa.</span></div></footer>
 
 <script>
+// Iconos de platos (SVG en línea). Para usar fotos reales, cambia "ico" por <img src="fotos/plato.jpg" alt="...">
+const P='<circle cx="32" cy="32" r="30" fill="#fff" stroke="#d5dde5" stroke-width="2"/>';
+const ico={
+tomate:P+'<circle cx="32" cy="35" r="17" fill="#d9534f"/><path d="M32 18l-6 5 6-1 6 1z" fill="#3f8f5a"/><path d="M22 52h20" stroke="#e58f8a" stroke-width="3"/>',
+tortilla:P+'<circle cx="24" cy="30" r="11" fill="#e0a64a"/><circle cx="40" cy="34" r="11" fill="#c98f35"/><circle cx="31" cy="42" r="9" fill="#e0a64a"/>',
+ensalad:P+'<path d="M12 42Q32 4 52 42Z" fill="#f2e9d0"/><path d="M26 30q6-8 12 0-3 6-6 6t-6-6Z" fill="#e58f8a"/>',
+atun:P+'<rect x="12" y="22" width="40" height="9" rx="2" fill="#a8333a"/><rect x="12" y="34" width="40" height="9" rx="2" fill="#c0454b"/><path d="M16 27h32M16 39h32" stroke="#12213a" stroke-width="2" opacity=".5"/>',
+urta:P+'<path d="M12 32Q30 14 46 32 30 50 12 32Z" fill="#8fb2ec"/><path d="M46 32l9-9v18z" fill="#1d3f72"/><circle cx="21" cy="30" r="2.5" fill="#12213a"/>',
+arroz:P+'<circle cx="32" cy="32" r="20" fill="#e0a64a"/><circle cx="25" cy="27" r="4" fill="#e58f8a"/><circle cx="38" cy="30" r="4" fill="#d9534f"/><circle cx="30" cy="39" r="3.5" fill="#3f8f5a"/><circle cx="40" cy="40" r="3" fill="#e58f8a"/>',
+tocino:P+'<path d="M14 40h36v6H14z" fill="#8a5a2b"/><rect x="14" y="26" width="36" height="14" rx="3" fill="#f0c24b"/><path d="M14 26q18-8 36 0" fill="#c98f35"/>',
+helado:P+'<path d="M24 34h16L32 54Z" fill="#c98f35"/><circle cx="32" cy="27" r="11" fill="#f6f8f9" stroke="#d5dde5" stroke-width="2"/><circle cx="29" cy="24" r="1.5" fill="#e58f8a"/><circle cx="35" cy="28" r="1.5" fill="#e58f8a"/>'};
 const carta={
-"Para empezar":[["Tomate de huerta con ventresca","Aliñado con sal de la casa y aceite de la sierra","12"],["Tortillitas de camarones","Finas y crujientes, de la bahía","10"],["Ensaladilla de langostino","Con mayonesa casera y huevas de maruca","11"]],
-"Del mar":[["Atún rojo de almadraba","Tataki al fuego con soja y sésamo","24"],["Urta a la roteña","Con pimientos, tomate y patata panadera","22"],["Arroz marinero","Caldo de pescado de roca, mínimo 2 personas","19 /p."]],
-"Dulces":[["Tocino de cielo","Receta de la abuela Dolores","6"],["Helado de flor de sal","Con aceite de oliva virgen extra","7"]]};
+"Para empezar":[["tomate","Tomate de huerta con ventresca","Aliñado con sal de la casa y aceite de la sierra","12"],["tortilla","Tortillitas de camarones","Finas y crujientes, de la bahía","10"],["ensalad","Ensaladilla de langostino","Con mayonesa casera y huevas de maruca","11"]],
+"Del mar":[["atun","Atún rojo de almadraba","Tataki al fuego con soja y sésamo","24"],["urta","Urta a la roteña","Con pimientos, tomate y patata panadera","22"],["arroz","Arroz marinero","Caldo de pescado de roca, mínimo 2 personas","19 /p."]],
+"Dulces":[["tocino","Tocino de cielo","Receta de la abuela Dolores","6"],["helado","Helado de flor de sal","Con aceite de oliva virgen extra","7"]]};
 const tabs=document.getElementById('tabs'),lista=document.getElementById('lista');
 function show(k){
- [...tabs.children].forEach(b=>b.setAttribute('aria-selected',b.textContent===k));
- lista.innerHTML=carta[k].map(([n,d,p])=>`<div class="dish"><h3>${n}</h3><b>${p} €</b><p>${d}</p></div>`).join('');
+ [...tabs.children].forEach(b=>b.setAttribute('aria-selected',String(b.textContent===k)));
+ lista.innerHTML=carta[k].map(([i,n,d,p])=>`<div class="dish"><svg viewBox="0 0 64 64" aria-hidden="true">${ico[i]}</svg><h3>${n}</h3><b>${p} €</b><p>${d}</p></div>`).join('');
 }
-Object.keys(carta).forEach(k=>{const b=document.createElement('button');b.textContent=k;b.role='tab';b.onclick=()=>show(k);tabs.appendChild(b)});
+Object.keys(carta).forEach(k=>{const b=document.createElement('button');b.type='button';b.textContent=k;b.setAttribute('role','tab');b.onclick=()=>show(k);tabs.appendChild(b)});
 show('Para empezar');
 const f=document.getElementById('f'),ok=document.getElementById('ok');
 f.d.min=new Date().toISOString().slice(0,10);
 f.addEventListener('submit',e=>{e.preventDefault();
  ok.style.display='block';
- ok.textContent=`Reserva anotada: ${f.n.value}, ${f.c.value} personas, el ${f.d.value} a las ${f.h.value}. (Es una demo: no se envía a ningún sitio.)`;
+ ok.textContent=`Reserva anotada: ${f.n.value}, ${f.c.value} ${f.c.value==='1'?'persona':'personas'}, el ${f.d.value} a las ${f.h.value}. (Es una demo: no se envía a ningún sitio.)`;
 });
 </script>
 </body>
